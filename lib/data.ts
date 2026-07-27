@@ -34,6 +34,7 @@ export const mockProducts: Product[] = [
     compare_at_price: 5999,
     category: 'sneakers',
     sizes: ['7', '8', '9', '10'],
+    image_url: '/images/sneakers/img-1.avif',
     featured: true,
   },
   {
@@ -44,6 +45,7 @@ export const mockProducts: Product[] = [
     price: 5499,
     category: 'running-shoes',
     sizes: ['6', '7', '8', '9'],
+    image_url: '/images/running-shoes/img-1.jpg',
     featured: true,
   },
   {
@@ -54,6 +56,7 @@ export const mockProducts: Product[] = [
     price: 6299,
     category: 'boots',
     sizes: ['8', '9', '10', '11'],
+    image_url: '/images/boots/img-1.webp',
     featured: true,
   },
 ];
