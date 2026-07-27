@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { mockCategories, mockProducts } from '@/lib/data';
+import ProductCard from './components/ProductCard';
 
 export default function Home() {
   const featured = mockProducts.filter((product) => product.featured);
@@ -43,18 +44,7 @@ export default function Home() {
         <h2 style={{ marginBottom: '1.5rem' }}>Featured shoes</h2>
         <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
           {featured.map((item) => (
-              <div key={item.name} className="card" style={{ padding: '1rem' }}>
-                <div style={{ height: '140px', background: '#ffe8e8', borderRadius: '0.75rem', marginBottom: '0.75rem' }} />
-                <h3 style={{ margin: '0 0 0.4rem' }}>{item.name}</h3>
-                <p style={{ margin: '0 0 0.6rem', color: '#666' }}>{item.description}</p>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <strong>₹{item.price.toLocaleString()}</strong>
-                  <Link href={`/products/${item.slug}`} className="btn">View</Link>
-                </div>
-                {item.image_url ? (
-                  <img src={encodeURI(item.image_url)} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : null}
-            </div>
+            <ProductCard key={item.id} product={item} />
           ))}
         </div>
       </section>

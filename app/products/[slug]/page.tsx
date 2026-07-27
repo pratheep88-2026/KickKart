@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { mockProducts } from '@/lib/data';
+import CheckoutButton from '../../components/CheckoutButton';
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = mockProducts.find((item) => item.slug === params.slug);
@@ -37,7 +38,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <div style={{ marginTop: '1.5rem' }}>
-            <Link href="/cart" className="btn">Add to cart</Link>
+           <CheckoutButton product={product} />
           </div>
         </div>
       </div>
