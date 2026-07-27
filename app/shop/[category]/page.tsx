@@ -14,7 +14,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           <div key={product.name} className="card" style={{ padding: '1rem' }}>
             <div style={{ position: 'relative', height: '140px', borderRadius: '0.75rem', marginBottom: '0.75rem', overflow: 'hidden', background: '#ffe8e8' }}>
               {product.image_url ? (
-                <img src={product.image_url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={encodeURI(product.image_url)} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               ) : null}
             </div>
             <h3 style={{ margin: '0 0 0.4rem' }}>{product.name}</h3>

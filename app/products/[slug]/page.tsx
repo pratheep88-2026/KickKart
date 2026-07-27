@@ -17,7 +17,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <Link href="/" style={{ color: '#dc2626' }}>← Back home</Link>
       <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: '1fr 1fr', marginTop: '1.5rem' }}>
         <div className="card" style={{ padding: '1rem' }}>
-          <div style={{ height: '280px', background: '#ffe8e8', borderRadius: '0.75rem' }} />
+          <div style={{ height: '280px', borderRadius: '0.75rem', overflow: 'hidden', background: '#ffe8e8' }}>
+            {product.image_url ? (
+              <img src={encodeURI(product.image_url)} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : null}
+          </div>
         </div>
         <div>
           <p style={{ color: '#dc2626', margin: 0, fontWeight: 700 }}>Featured</p>

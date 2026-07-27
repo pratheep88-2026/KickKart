@@ -49,3 +49,8 @@ The storefront now includes:
 - Product listing and product detail pages
 - Navigation and placeholder auth/cart/checkout routes
 - API routes for health checks and Razorpay order creation
+
+### Note about images
+- The project currently contains image files in `images/` with folder names that include spaces (e.g. `images/Sneakers shoes/`).
+- Spaces in file paths can cause issues when deploying. Prefer renaming these folders to use dashes or no spaces (e.g. `images/sneakers/`).
+- If you keep spaces, the app encodes paths automatically, but renaming is more robust. To rename locally, move the folders and update `lib/data.ts` image paths accordingly.
