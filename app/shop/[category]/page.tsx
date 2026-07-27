@@ -12,7 +12,11 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
         {products.map((product) => (
           <div key={product.name} className="card" style={{ padding: '1rem' }}>
-            <div style={{ height: '140px', background: '#ffe8e8', borderRadius: '0.75rem', marginBottom: '0.75rem' }} />
+            <div style={{ position: 'relative', height: '140px', borderRadius: '0.75rem', marginBottom: '0.75rem', overflow: 'hidden', background: '#ffe8e8' }}>
+              {product.image_url ? (
+                <img src={product.image_url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              ) : null}
+            </div>
             <h3 style={{ margin: '0 0 0.4rem' }}>{product.name}</h3>
             <p style={{ color: '#666', marginBottom: '0.75rem' }}>{product.description}</p>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
